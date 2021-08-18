@@ -1,0 +1,199 @@
+<style>
+p {
+    background-color:white;
+    font-size: 130%;
+    }
+body {
+    background-color:#eeeeee;
+    padding: 0px 0px 50px 0px;
+    }
+.code-block {
+    background:#3d3d3d;
+    overflow:auto;
+    width:auto;
+    border:solid #ffd703;
+    border-width:1.5em .3em .3em .3em;
+    padding: .6em .6em;
+    margin:0;
+    line-height: 125%;
+    color: #ffffff;
+    }
+.line {
+    margin:0;
+    color:white;
+    line-height: 125%;
+    font-size: 2.5vw;
+    }
+.codetext {
+    font-size: 2.5vw;
+    color: white;
+    margin:0;
+    line-height: 125%;
+    padding: 0px 0px 0px 40px;
+    }
+
+
+.import-code {
+    color: #b664fb;
+    }
+.class-code {
+    color: #ff9000;
+    }
+.object-code {
+    color: #19b4d0;
+    }
+.self-code {
+    color: #ff00ff;
+    }
+.tab {
+    padding: 0px 0px 0px 40px;
+    }
+.string-code {
+    color: #ff2809;
+    }
+.def-code {
+    color: #6e7ce5;
+    }
+.func-code {
+    color: #ff9600;
+    }
+.return-code {
+    color: #007eff;
+    }
+.ifelse-code {
+    color:#9c00ff;
+    }
+.other-code {
+    color:#6edbe5;
+    }
+.const-code {
+    color:#e1e56e;
+    }
+.loop-code {
+    color:#007eff;
+    }
+.continue-code {
+    color:#00ffff;
+    }
+.pass-code {
+    color:#5fa932;
+    }
+.isin-code {
+    color:#00ffff;
+}
+.comment-code {
+    color:blue;
+}
+.fileformat {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 4vw;
+    text-decoration: underline;
+    color: #ffd703;
+}
+
+.equation {
+    color: red;
+    background-color: #B0B0AC;
+    border: 1px solid blue;
+    border-radius: 5px;
+    }
+.newtext {
+    color: #55ff55;
+    font-style: italic;
+    font-weight: bold;
+    }
+.strikeout {
+    color: red;
+    text-decoration: line-through;
+    }
+b {color:red;}
+</style>
+
+<body>
+  <div class="code-block">
+    
+<span class="fileformat">junk.py</span>      
+<table>
+<tr>
+<td>
+<pre class="line">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre>
+</td>
+<td>
+<pre class="codetext">
+
+<span class="class-code">class</span> <span class="func-code">NodeGroup</span>(<span class="object-code">object</span>):
+    <span class="def-code">def</span> <span class="func-code">__init__</span>(<span class="self-code">self</span>):
+        <span class="self-code">self</span>.nodeList = []
+
+    <span class="def-code">def</span> <span class="func-code">setupTestNodes</span>(<span class="self-code">self</span>):
+        nodeA = <span class="func-code">Node</span>(80 ,80)
+        nodeB = <span class="func-code">Node</span>(160, 80)
+        nodeC = <span class="func-code">Node</span>(80, 160)
+        nodeD = <span class="func-code">Node</span>(160, 160)
+        nodeE = <span class="func-code">Node</span>(208, 160)
+        nodeF = <span class="func-code">Node</span>(80, 320)
+        nodeG = <span class="func-code">Node</span>(208, 320)
+        nodeA.neighbors[<span class="const-code">RIGHT</span>] = nodeB
+        nodeA.neighbors[<span class="const-code">DOWN</span>] = nodeC
+        nodeB.neighbors[<span class="const-code">LEFT</span>] = nodeA
+        nodeB.neighbors[<span class="const-code">DOWN</span>] = nodeD
+        nodeC.neighbors[<span class="const-code">UP</span>] = nodeA
+        nodeC.neighbors[<span class="const-code">RIGHT</span>] = nodeD
+        nodeC.neighbors[<span class="const-code">DOWN</span>] = nodeF
+        nodeD.neighbors[<span class="const-code">UP</span>] = nodeB
+        nodeD.neighbors[<span class="const-code">LEFT</span>] = nodeC
+        nodeD.neighbors[<span class="const-code">RIGHT</span>] = nodeE
+        nodeE.neighbors[<span class="const-code">LEFT</span>] = nodeD
+        nodeE.neighbors[<span class="const-code">DOWN</span>] = nodeG
+        nodeF.neighbors[<span class="const-code">UP</span>] = nodeC
+        nodeF.neighbors[<span class="const-code">RIGHT</span>] = nodeG
+        nodeG.neighbors[<span class="const-code">UP</span>] = nodeE
+        nodeG.neighbors[<span class="const-code">LEFT</span>] = nodeF
+        <span class="self-code">self</span>.nodeList = [nodeA, nodeB, nodeC, nodeD, nodeE, nodeF, nodeG]
+
+    <span class="def-code">def</span> <span class="func-code">render</span>(<span class="self-code">self</span>, screen):
+        <span class="loop-code">for</span> node <span class="isin-code">in</span> <span class="self-code">self</span>.nodeList:
+            node.<span class="func-code">render</span>(screen)
+
+</pre>
+</td>
+</tr>
+
+</table>
+</div>
+</body>

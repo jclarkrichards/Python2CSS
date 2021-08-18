@@ -1,0 +1,462 @@
+<style>
+p {
+    background-color:white;
+    font-size: 130%;
+    }
+body {
+    background-color:#eeeeee;
+    padding: 0px 0px 50px 0px;
+    }
+.code-block {
+    background:#3d3d3d;
+    overflow:auto;
+    width:auto;
+    border:solid #ffd703;
+    border-width:1.5em .3em .3em .3em;
+    padding: .6em .6em;
+    margin:0;
+    line-height: 125%;
+    color: #ffffff;
+    }
+.line {
+    margin:0;
+    color:white;
+    line-height: 125%;
+    font-size: 2.5vw;
+    }
+.codetext {
+    font-size: 2.5vw;
+    color: white;
+    margin:0;
+    line-height: 125%;
+    padding: 0px 0px 0px 40px;
+    }
+
+
+.import-code {
+    color: #b664fb;
+    }
+.class-code {
+    color: #ff9000;
+    }
+.object-code {
+    color: #19b4d0;
+    }
+.self-code {
+    color: #ff00ff;
+    }
+.tab {
+    padding: 0px 0px 0px 40px;
+    }
+.string-code {
+    color: #ff2809;
+    }
+.def-code {
+    color: #6e7ce5;
+    }
+.func-code {
+    color: #ff9600;
+    }
+.return-code {
+    color: #007eff;
+    }
+.ifelse-code {
+    color:#9c00ff;
+    }
+.other-code {
+    color:#6edbe5;
+    }
+.const-code {
+    color:#e1e56e;
+    }
+.loop-code {
+    color:#007eff;
+    }
+.continue-code {
+    color:#00ffff;
+    }
+.pass-code {
+    color:#5fa932;
+    }
+.isin-code {
+    color:#00ffff;
+}
+.comment-code {
+    color:blue;
+}
+.fileformat {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 4vw;
+    text-decoration: underline;
+    color: #ffd703;
+}
+
+.equation {
+    color: red;
+    background-color: #B0B0AC;
+    border: 1px solid blue;
+    border-radius: 5px;
+    }
+.newtext {
+    color: #55ff55;
+    font-style: italic;
+    font-weight: bold;
+    }
+.strikeout {
+    color: red;
+    text-decoration: line-through;
+    }
+b {color:red;}
+</style>
+
+<body>
+  <div class="code-block">
+    
+<span class="fileformat">fruit.py</span>      
+<table>
+<tr>
+<td>
+<pre class="line">
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+<<<Enter line numbers here>>>
+</pre>
+</td>
+<td>
+<pre class="codetext">
+
+<span class="class-code">class</span> <span class="func-code">Node</span>(<span class="object-code">object</span>):
+    <span class="def-code">def</span> <span class="func-code">__init__</span>(<span class="self-code">self</span>, row, column):
+        <span class="self-code">self</span>.row, <span class="self-code">self</span>.column = row, column
+        <span class="self-code">self</span>.position = <span class="func-code">Vector2</span>(column*TILEWIDTH, row*TILEHEIGHT)
+        <span class="self-code">self</span>.neighbors = {<span class="const-code">UP</span>:<span class="other-code">None</span>, <span class="const-code">DOWN</span>:<span class="other-code">None</span>, <span class="const-code">LEFT</span>:<span class="other-code">None</span>, <span class="const-code">RIGHT</span>:<span class="other-code">None</span>}
+        <span class="self-code">self</span>.portalNode = <span class="other-code">None</span>
+        <span class="self-code">self</span>.portalVal = 0
+        <span class="self-code">self</span>.homeGuide = <span class="other-code">False</span>
+        <span class="self-code">self</span>.homeEntrance = <span class="other-code">False</span>
+        <span class="self-code">self</span>.spawnNode = <span class="other-code">False</span>
+        <span class="self-code">self</span>.pacmanStart = <span class="other-code">False</span>
+        <span class="newtext">self.fruitStart = False</span>
+
+
+<span class="class-code">class</span> <span class="func-code">NodeGroup</span>(<span class="object-code">object</span>):
+    <span class="def-code">def</span> <span class="func-code">__init__</span>(<span class="self-code">self</span>, level):
+        <span class="self-code">self</span>.nodeList = []
+        <span class="self-code">self</span>.homeList = []
+        <span class="self-code">self</span>.level = level
+        <span class="self-code">self</span>.grid = <span class="other-code">None</span>
+        <span class="self-code">self</span>.nodeStack = <span class="func-code">Stack</span>()
+        <span class="self-code">self</span>.pathSymbols = [<span class="string-code">"p"</span>, <span class="string-code">"P"</span>]
+        <span class="self-code">self</span>.portalSymbols = [<span class="string-code">"1"</span>]
+        <span class="self-code">self</span>.nodeSymbols = [<span class="string-code">"+"</span>, <span class="string-code">"n"</span>, <span class="string-code">"N"</span>, <span class="string-code">"H"</span>, <span class="string-code">"S"</span>, <span class="string-code">"Y"</span>, <span class="string-code">"F"</span>] + <span class="self-code">self</span>.portalSymbols
+        <span class="self-code">self</span>.grid = <span class="self-code">self</span>.<span class="func-code">readMazeFile</span>(level)
+        <span class="self-code">self</span>.homegrid = <span class="self-code">self</span>.<span class="func-code">getHomeArray</span>()
+        <span class="self-code">self</span>.<span class="func-code">createNodeList</span>(<span class="self-code">self</span>.grid, <span class="self-code">self</span>.nodeList)
+        <span class="self-code">self</span>.<span class="func-code">createNodeList</span>(<span class="self-code">self</span>.homegrid, <span class="self-code">self</span>.homeList)
+        <span class="self-code">self</span>.<span class="func-code">setupPortalNodes</span>()
+        <span class="self-code">self</span>.<span class="func-code">moveHomeNodes</span>()
+        <span class="self-code">self</span>.homeList[0].homeEntrance = <span class="other-code">True</span>
+
+    <span class="def-code">def</span> <span class="func-code">pathToFollow</span>(<span class="self-code">self</span>, direction, row, col, path, grid):
+        tempSymbols = [path]+self.nodeSymbols + <span class="self-code">self</span>.pathSymbols
+        <span class="ifelse-code">if</span> grid[row][col] <span class="isin-code">in</span> tempSymbols:
+            <span class="loop-code">while</span> grid[row][col] <span class="isin-code">not</span> <span class="isin-code">in</span> <span class="self-code">self</span>.nodeSymbols:
+                <span class="ifelse-code">if</span> direction <span class="isin-code">is</span> <span class="const-code">LEFT</span>: col -= 1
+                <span class="ifelse-code">elif</span> direction <span class="isin-code">is</span> <span class="const-code">RIGHT</span>: col += 1
+                <span class="ifelse-code">elif</span> direction <span class="isin-code">is</span> <span class="const-code">UP</span>: row -= 1
+                <span class="ifelse-code">elif</span> direction <span class="isin-code">is</span> <span class="const-code">DOWN</span>: row += 1
+            node = <span class="func-code">Node</span>(row, col)
+            <span class="ifelse-code">if</span> grid[row][col] == <span class="string-code">"H"</span>:
+                node.homeGuide = <span class="other-code">True</span>
+            <span class="ifelse-code">if</span> grid[row][col] == <span class="string-code">"S"</span>:
+                node.spawnNode = <span class="other-code">True</span>
+            <span class="ifelse-code">if</span> grid[row][col] == <span class="string-code">"Y"</span>:
+                node.pacmanStart = <span class="other-code">True</span>
+            <span class="newtext">if grid[row][col] == "F":</span>
+                <span class="newtext">node.fruitStart = True</span>
+            <span class="ifelse-code">if</span> grid[row][col] <span class="isin-code">in</span> <span class="self-code">self</span>.portalSymbols:
+                node.portalVal = grid[row][col]
+            <span class="return-code">return</span> node
+        <span class="ifelse-code">else</span>:
+            <span class="return-code">return</span> <span class="other-code">None</span>
+
+        
+<span class="comment-code">#fruit.py</span>
+<span class="import-code">import</span> pygame
+<span class="import-code">from</span> entity <span class="import-code">import</span> MazeRunner
+<span class="import-code">from</span> constants <span class="import-code">import</span> *
+
+<span class="class-code">class</span> <span class="func-code">Fruit</span>(MazeRunner):
+    <span class="def-code">def</span> <span class="func-code">__init__</span>(<span class="self-code">self</span>, nodes):
+        MazeRunner.<span class="func-code">__init__</span>(<span class="self-code">self</span>, nodes)
+        <span class="self-code">self</span>.name = <span class="string-code">"fruit"</span>
+        <span class="self-code">self</span>.color = <span class="func-code"></span>(0,200,0)
+        <span class="self-code">self</span>.<span class="func-code">setStartPosition</span>()
+        <span class="self-code">self</span>.lifespan = 5
+        <span class="self-code">self</span>.timer = 0
+        <span class="self-code">self</span>.destroy = <span class="other-code">False</span>
+
+    <span class="def-code">def</span> <span class="func-code">update</span>(<span class="self-code">self</span>, dt):
+        <span class="self-code">self</span>.timer += dt
+        <span class="ifelse-code">if</span> <span class="self-code">self</span>.timer >= <span class="self-code">self</span>.lifespan:
+            <span class="self-code">self</span>.destroy = <span class="other-code">True</span>
+            
+    <span class="def-code">def</span> <span class="func-code">setStartPosition</span>(<span class="self-code">self</span>):
+        <span class="self-code">self</span>.node = <span class="self-code">self</span>.<span class="func-code">findStartNode</span>()
+        <span class="self-code">self</span>.target = <span class="self-code">self</span>.node.neighbors[<span class="const-code">LEFT</span>]
+        <span class="self-code">self</span>.<span class="func-code">setPosition</span>()
+        <span class="self-code">self</span>.position.x -= <span class="func-code"></span>(<span class="self-code">self</span>.node.position.x - <span class="self-code">self</span>.target.position.x) / 2
+
+    <span class="def-code">def</span> <span class="func-code">findStartNode</span>(<span class="self-code">self</span>):
+        <span class="loop-code">for</span> node <span class="isin-code">in</span> <span class="self-code">self</span>.nodes.nodeList:
+            <span class="ifelse-code">if</span> node.fruitStart:
+                <span class="return-code">return</span> node
+        <span class="return-code">return</span> <span class="other-code">None</span>
+
+
+<span class="comment-code">#run.py</span>
+<span class="import-code">import</span> pygame
+<span class="import-code">from</span> pygame.locals <span class="import-code">import</span> *
+<span class="import-code">from</span> constants <span class="import-code">import</span> *
+<span class="import-code">from</span> pacman <span class="import-code">import</span> Pacman
+<span class="import-code">from</span> nodes <span class="import-code">import</span> NodeGroup
+<span class="import-code">from</span> pellets <span class="import-code">import</span> PelletGroup
+<span class="import-code">from</span> ghosts <span class="import-code">import</span> GhostGroup
+<span class="newtext">from fruit import Fruit</span>
+
+<span class="class-code">class</span> <span class="func-code">GameController</span>(<span class="object-code">object</span>):
+    <span class="def-code">def</span> <span class="func-code">__init__</span>(<span class="self-code">self</span>):
+        pygame.<span class="func-code">init</span>()
+        <span class="self-code">self</span>.screen = pygame.display.<span class="func-code">set_mode</span>(<span class="const-code">SCREENSIZE</span>, 0, 32)
+        <span class="self-code">self</span>.background = <span class="other-code">None</span>
+        <span class="self-code">self</span>.<span class="func-code">setBackground</span>()
+        <span class="self-code">self</span>.clock = pygame.time.<span class="func-code">Clock</span>()
+        <span class="self-code">self</span>.pelletsEaten = 0
+        <span class="newtext">self.fruit = None</span>
+        
+
+    <span class="def-code">def</span> <span class="func-code">update</span>(<span class="self-code">self</span>):
+        dt = <span class="self-code">self</span>.clock.<span class="func-code">tick</span>(30) / 1000.0
+        <span class="self-code">self</span>.pacman.<span class="func-code">update</span>(dt)
+        <span class="self-code">self</span>.ghosts.<span class="func-code">update</span>(dt, <span class="self-code">self</span>.pacman)
+        <span class="newtext">if self.fruit is not None:</span>
+            <span class="newtext">self.fruit.update(dt)</span>
+        <span class="self-code">self</span>.<span class="func-code">checkEvents</span>()
+        <span class="self-code">self</span>.<span class="func-code">render</span>()
+
+    <span class="def-code">def</span> <span class="func-code">checkEvents</span>(<span class="self-code">self</span>):
+        <span class="loop-code">for</span> event <span class="isin-code">in</span> pygame.event.<span class="func-code">get</span>():
+            <span class="ifelse-code">if</span> event.type == <span class="const-code">QUIT</span>:
+                <span class="func-code">exit</span>()
+        <span class="self-code">self</span>.<span class="func-code">checkPelletEvents</span>()
+        <span class="self-code">self</span>.<span class="func-code">checkGhostEvents</span>()
+        <span class="newtext">self.checkFruitEvents()</span>
+
+    <span class="def-code">def</span> <span class="func-code">checkPelletEvents</span>(<span class="self-code">self</span>):
+        pellet = <span class="self-code">self</span>.pacman.<span class="func-code">eatPellets</span>(<span class="self-code">self</span>.pellets.pelletList)
+        <span class="ifelse-code">if</span> pellet:
+            <span class="self-code">self</span>.pelletsEaten += 1
+            <span class="newtext">if (self.pelletsEaten == 70 or self.pelletsEaten == 140):</span>
+                <span class="newtext">if self.fruit is None:</span>
+                    <span class="newtext">self.fruit = Fruit(self.nodes)</span>
+            <span class="self-code">self</span>.pellets.pelletList.<span class="func-code">remove</span>(pellet)
+            <span class="ifelse-code">if</span> pellet.name == <span class="string-code">"powerpellet"</span>:
+                <span class="self-code">self</span>.ghosts.<span class="func-code">freightMode</span>()
+
+            
+    <span class="newtext">def checkFruitEvents(self):</span>
+        <span class="newtext">if self.fruit is not None:</span>
+            <span class="newtext">if self.pacman.eatFruit(self.fruit) or self.fruit.destroy:</span>
+                <span class="newtext">self.fruit = None</span>
+
+            
+    <span class="def-code">def</span> <span class="func-code">render</span>(<span class="self-code">self</span>):
+        <span class="self-code">self</span>.screen.<span class="func-code">blit</span>(<span class="self-code">self</span>.background, <span class="func-code"></span>(0,0))
+        <span class="self-code">self</span>.nodes.<span class="func-code">render</span>(<span class="self-code">self</span>.screen)
+        <span class="self-code">self</span>.pellets.<span class="func-code">render</span>(<span class="self-code">self</span>.screen)
+        <span class="newtext">if self.fruit is not None:</span>
+            <span class="newtext">self.fruit.render(self.screen)</span>
+        <span class="self-code">self</span>.pacman.<span class="func-code">render</span>(<span class="self-code">self</span>.screen)
+        <span class="self-code">self</span>.ghosts.<span class="func-code">render</span>(<span class="self-code">self</span>.screen)
+        pygame.display.<span class="func-code">update</span>()
+
+        
+<span class="comment-code">#pacman.py</span>
+<span class="def-code">def</span> <span class="func-code">eatFruit</span>(<span class="self-code">self</span>, fruit):
+    d = <span class="self-code">self</span>.position - fruit.position
+    dSquared = d.<span class="func-code">magnitudeSquared</span>()
+    rSquared = <span class="func-code"></span>(<span class="self-code">self</span>.collideRadius+fruit.collideRadius)**2
+    <span class="ifelse-code">if</span> dSquared <= rSquared:
+        <span class="return-code">return</span> <span class="other-code">True</span>
+    <span class="return-code">return</span> <span class="other-code">False</span>
+
+</pre>
+</td>
+</tr>
+
+</table>
+</div>
+</body>

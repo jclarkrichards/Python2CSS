@@ -1,0 +1,101 @@
+p {
+    background-color:white;
+    font-size: 130%;
+}
+body {
+    background-color:#3d3d3d;
+    padding: 0px 0px 50px 0px;
+    
+}
+.code-block {
+    background:#3d3d3d;
+    overflow:auto;
+    width:auto;
+    border:solid #ffff00;
+    border-width:.1em .1em .1em .8em;
+    padding: .2em .6em;
+    margin:0;
+    line-height: 125%;
+    color: #ffffff;
+}
+.line {
+    margin:0;
+    line-height: 125%;
+    font-size: 150%;
+}
+.codetext {
+    font-size: 150%;
+    margin:0;
+    line-height: 125%;
+    padding: 0px 0px 0px 40px;
+}
+.import-code {
+    color: #b664fb;
+}
+.class-code {
+    color: #ff9000;
+}
+.object-code {
+    color: #19b4d0;
+}
+.self-code {
+    color: #ff00ff;
+}
+.tab {
+    padding: 0px 0px 0px 40px;
+}
+
+.string-code {
+    color: #ff2809;
+}
+.def-code {
+    color: #6e7ce5;
+}
+.func-code {
+    color: #ff9600;
+}
+.return-code {
+    color: #19d051;
+
+}
+.ifelse-code {
+    color:#9c00ff;
+}
+.other-code {
+    color:#6edbe5;
+}
+.const-code {
+    color:#e1e56e;
+}
+.loop-code {
+    color:#007eff;
+}
+.continue-code {
+    color:#572932;
+}
+.pass-code {
+    color:#5fa932;
+}
+.isin-code {
+    color:#00ffff;
+}
+.equation {
+    color: red;
+    background-color: #B0B0AC;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.basetext {
+    color:white;
+}
+.newtext {
+    color: #00ffff;
+    font-style: italic;
+    font-weight: bold;
+}
+.strikeout {
+    color: #FF3A37;
+    text-decoration: line-through;
+}
+b {color:red;}
+
